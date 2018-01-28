@@ -1,0 +1,23 @@
+{
+  "name": "mojor_project",
+  "version": "1.0.0",
+  "description": "video classifier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohitt533/Video-Classifier.git"
+  },
+  "author": "Mohit tiwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohitt533/Video-Classifier/issues"
+  },
+  "homepage": "https://github.com/mohitt533/Video-Classifier#readme",
+  "dependencies": {
+    "electron-reload": "^1.2.2",
+    "jquery": "^3.3.1"
+  }
+}
