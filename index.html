@@ -22,22 +22,20 @@
 
   <div class="wrapper wrapper--full wrapper--video row" style="margin-bottom:0px;margin-left:0px;">
     <div class="video-container col-lg-4">
-      <img src="./vr-header3.png" height="320" width="600" style="margin-left:150px;">
+      <img id="blah" src="./vr-header3.png" height="320" width="600" style="margin-left:150px;">
       <div id="video-hud" >
 
        <button id="video-button"  class="video-play-button mega-octicon octicon-playback-play" style="margin-top:0px; margin-left:0px;  transform: translate(-300%,90%);" aria-label="Play video"></button>
       </div>
 
-    </div><form style="margin-left:250px;transform: translate(-30%,100%);">
-      <div class="file-field">
-          <div class="btn btn-primary btn-sm">
-        <input type="file">
-          </div>
-          <div class="file-path-wrapper">
-             <input class="file-path validate" type="text" placeholder="">
-          </div>
-      </div>
+    </div>
+
+    <form id="form1" runat="server" style="transform: translate(-10%,50%);">
+      <input type='file' id="imgInp" />
+
     </form>
+
+
     <!--Card-->
     <div class="card col-lg-4" style="transform: translate(20%,-180%);">
 
@@ -83,6 +81,30 @@
     </a>
   </div>
 </footer>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+ function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#blah').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#imgInp").change(function() {
+  readURL(this);
+});
+
+</script>
 
 </body>
 </html>
