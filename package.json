@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mohitt533/Video-Classifier#readme",
   "dependencies": {
     "electron-reload": "^1.2.2",
+    "express": "^4.16.2",
     "jquery": "^3.3.1"
   }
 }
