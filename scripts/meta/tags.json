@@ -1,0 +1,37 @@
+{
+  "drinking": [
+    "drink",
+    "alcoholic beverage",
+    "beer",
+    "alcohol",
+    "pint us",
+    "bar",
+    "liqueur"
+  ],
+  "sex": [
+    "undergarment",
+    "erotic literature",
+    "love",
+    "romance",
+    "muscle"
+  ],
+  "smoking_tags": [
+    "tobacco products",
+    "cigarette",
+    "cigar",
+    "smoking"
+  ],
+  "violence": [
+    "riot",
+    "militia",
+    "police",
+    "explosion",
+    "disaster",
+    "aggression",
+    "war",
+    "military organization",
+    "army",
+    "mercenary",
+    "battle"
+  ]
+}

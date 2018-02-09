@@ -141,6 +141,8 @@
 
 <script>
 
+document.getElementById("myBtn").addEventListener("click", run_script);
+
  function readURL(input) {
 
   if (input.files && input.files[0]) {
@@ -158,7 +160,25 @@ $("#imgInp").change(function() {
   readURL(this);
 });
 
+
+function run_script(input) {
+    $.ajax({
+        type: "POST",
+        url: "/script/run.py",
+        success: callbackFunc
+    });
+}
+
+function callbackFunc(response) {
+
+    console.log(response);
+}
+
+postData('data to process');
+
 </script>
+
+
 
 </body>
 </html>
