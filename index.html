@@ -76,7 +76,6 @@
       <span>Pick image...</span>
       </label>
 
-
     <!--Card-->
     <div class="card col-lg-4" style="transform: translate(20%,-130%);">
 
@@ -141,7 +140,7 @@
 
 <script>
 
-document.getElementById("myBtn").addEventListener("click", run_script);
+//preview image start
 
  function readURL(input) {
 
@@ -160,21 +159,32 @@ $("#imgInp").change(function() {
   readURL(this);
 });
 
+//preview image end
 
-function run_script(input) {
-    $.ajax({
-        type: "POST",
-        url: "/script/run.py",
-        success: callbackFunc
-    });
-}
 
-function callbackFunc(response) {
 
-    console.log(response);
-}
 
-postData('data to process');
+// python script start
+
+document.getElementById('imgInp').onchange = function () {
+     
+      var path=window.location.pathname;
+     
+      const spawn = require('child_process').spawn;
+      const run = spawn('python', ['run.py', path]);
+
+run.stdout.on('data', (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+run.stderr.on('data', (data) => {
+  console.log(`stderr: ${data}`);
+})
+
+run.on('close', (code) => {
+  console.log(`child process exited with code ${code}`);
+})
+  };
 
 </script>
 
