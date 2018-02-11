@@ -166,12 +166,15 @@ $("#imgInp").change(function() {
 
 // python script start
 
+
 document.getElementById('imgInp').onchange = function () {
      
-      var path=window.location.pathname;
+      var path="img/"+document.getElementById("imgInp").files[0].name;
+	  console.log(path);
+	  
      
       const spawn = require('child_process').spawn;
-      const run = spawn('python', ['run.py', path]);
+      const run = spawn('python', ['scripts/run.py', path]);
 
 run.stdout.on('data', (data) => {
   console.log(`stdout: ${data}`);
