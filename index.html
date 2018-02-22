@@ -91,11 +91,9 @@
           </label>
             <h4 class="card-title" style="margin-left:10px;">Detailed metadata Tags</h4>
             <!--Text-->
-            <p class="card-text">Drink- 92.63% </p>
-            <p class="card-text">Alcohol- 92.72% </p>
-            <p class="card-text">Liqueur- 94.71%</p>
-            <p class="card-text">Adult Content- Very Unlikely </p>
-            <p class="card-text">Voilence- Very Unlikely </p>
+			<div id="demo1">
+            
+           </div>
         </div>
 
     </div>
@@ -166,6 +164,13 @@ $("#imgInp").change(function() {
 
 // python script start
 
+  /*
+  var response={ "name":"John", "age":30, "car":null };
+ 
+for (x in response) {
+    document.getElementById("demo1").innerHTML +='<p class="card-text" >'+x+"- "+response[x] +"</p>";
+}
+*/
 
 document.getElementById('imgInp').onchange = function () {
      
@@ -177,7 +182,14 @@ document.getElementById('imgInp').onchange = function () {
       const run = spawn('python', ['scripts/run.py', path]);
 
 run.stdout.on('data', (data) => {
-  console.log(`stdout: ${data}`);
+  var response = JSON.parse(data);
+
+ 
+for (x in response) {
+    document.getElementById("demo").innerHTML +="<p class="card-text" >"+x+"- "+response[x] +"</p>";
+}
+
+  console.log(response)
 });
 
 run.stderr.on('data', (data) => {

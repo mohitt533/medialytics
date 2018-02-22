@@ -5,7 +5,7 @@ class Helper(object):
     @classmethod
     def get_desc(cls, label):
         result = {}
-        with open('meta/tags.json') as fh:
+        with open('scripts/meta/tags.json') as fh:
             data = json.load(fh)
 
         for tags in data:

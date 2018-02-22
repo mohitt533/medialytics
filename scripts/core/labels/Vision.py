@@ -3,6 +3,7 @@ from google.cloud.vision import types
 import io
 import json
 from .Helpers import Helper
+import sys
 
 
 class Vision(object):
@@ -35,4 +36,5 @@ class Vision(object):
         cls.result['adult'] = likelihood[safe_annotations.adult]
         cls.result['violence'] = likelihood[safe_annotations.violence]
         print(json.dumps(cls.result))
-        return json.dumps(cls.result)
+        # sys.stdout.flush()
+        # return json.dumps(cls.result)

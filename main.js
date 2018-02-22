@@ -16,7 +16,7 @@ function createWindow() {
       slashes: true
 
    }))
-	 win.webContents.openDevTools();
+
 }
 
 app.on('ready', createWindow)
